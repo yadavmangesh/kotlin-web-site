@@ -57,7 +57,9 @@ When you create a multiplatform project, targets are added to the `kotlin` block
 kotlin {
     jvm()    
     js {
-        browser {}
+        browser {
+            binaries.executable()
+        }
     }
  }
 ```
