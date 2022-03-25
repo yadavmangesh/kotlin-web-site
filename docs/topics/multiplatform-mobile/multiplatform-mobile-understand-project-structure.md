@@ -3,23 +3,15 @@
 The purpose of the Kotlin Multiplatform Mobile technology is unifying the development of applications with common 
 logic for Android and iOS platforms. To make this possible, it uses a mobile-specific structure of
 [Kotlin Multiplatform](multiplatform.md) projects.
-This page describes the structure of a basic cross-platform mobile project. Note that this structure isn’t the only
-possible way to organize your project; however, we recommend it as a starting point.
 
-A basic Kotlin Mobile Multiplatform project consists of three components:
+This page describes the structure and components of a basic cross-platform mobile project: shared module, Android app,
+and an iOS app.
 
-* _Shared module_ – a Kotlin module that contains common logic for both Android and iOS applications.
-Builds into an Android library and an iOS framework. Uses Gradle as a build system.
-* _Android application_ – a Kotlin module that builds into the Android application.
-Uses Gradle as a build system.
-* _iOS application_ – an Xcode project that builds into the iOS application.
+> This structure isn't the only possible way to organize your project; however, we recommend it as a starting point.
+>
+{type="note"}
 
 ![Basic Multiplatform Mobile project structure](basic-project-structure.png){width=700}
-
-This is the structure of a Multiplatform Mobile project that you create with a Project Wizard in IntelliJ IDEA or Android Studio.
-Real-life projects can have more complex structure; we consider these three components essential.
-
-Let’s take a closer look at the basic project and its components.
 
 ## Root project
 
@@ -64,9 +56,9 @@ For more complex projects, you can add more modules into the root project by cre
 
 ## Shared module
 
-Shared module contains the core application logic used in both target platforms: classes, functions, and so on.
+Shared module contains the core application logic used in both Android and iOS target platforms: classes, functions, and so on.
 This is a [Kotlin Multiplatform](multiplatform-get-started.md) module that compiles
-into an Android library and an iOS framework. It uses Gradle with the Kotlin Multiplatform plugin applied and 
+into an Android library and an iOS framework. It uses the Gradle build system with the Kotlin Multiplatform plugin applied and 
 has targets for Android and iOS.
 
 <tabs group="build-script">
