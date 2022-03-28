@@ -11,12 +11,16 @@ and an iOS app.
 >
 {type="note"}
 
-![Basic Multiplatform Mobile project structure](basic-project-structure.png){width=700}
+To view the complete structure of your mobile multiplatform project, switch the view from **Android** to **Project**.
+
+![Select the Project view](select-project-view.png){width=200}
 
 ## Root project
 
 The root project is a Gradle project that holds the shared module and the Android application as its subprojects.
 They are linked together via the [Gradle multi-project mechanism](https://docs.gradle.org/current/userguide/multi_project_builds.html). 
+
+![Basic Multiplatform Mobile project structure](basic-project-structure.png){width=700}
 
 <tabs group="build-script">
 <tab title="Kotlin" group-key="kotlin">
@@ -97,9 +101,9 @@ kotlin {
 ### Source sets
 
 The shared module contains the code that is common for Android and iOS applications. However, to implement the same logic
- on Android and iOS, you sometimes need to write two platform-specific versions of it. 
- To handle such cases, Kotlin offers the [expect/actual](multiplatform-connect-to-apis.md) mechanism.
- The source code of the shared module is organized in three source sets accordingly:
+on Android and iOS, you sometimes need to write two platform-specific versions of it.
+To handle such cases, Kotlin offers the [expect/actual](multiplatform-connect-to-apis.md) mechanism.
+The source code of the shared module is organized in three source sets accordingly:
 
 * `commonMain` stores the code that works on both platforms, including the `expect` declarations
 * `androidMain` stores Android-specific parts, including `actual` implementations
